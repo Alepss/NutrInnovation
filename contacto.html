@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>NutrInnovation</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="alimentacion.html">Alimentación Saludable</a></li>
+            <li><a href="ejercicio.html">Ejercicio</a></li>
+            <li><a href="consejos.html">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section class="texto">
+        <h2>Contacto</h2>
+        <p>¡Bienvenido! Si estás interesado en mejorar tu calidad de vida, completa el formulario a continuación para que podamos contactarte.</p>
+       <p>
+        O encuentranos en nuestras redes sociales:
+       </p>
+       <div class="imagen">
+        @NutrInnovation <br>
+        <a href="https://x.com/NutrInnovation"style="cursor:pointer;"target="_blank">
+        <img src="logox.avif" height="50" width="50"> 
+        </a>
+       </div><br>
+       <div class="imagen">
+        nutrinnovation.fit <br>
+        <a href="https://www.instagram.com/nutrinnovation.fit/?hl=es-la"style="cursor:pointer;"target="_blank">
+        <img src="Instagram_icon.png" height="50" width="50"style="border:0;"> 
+        </a>
+       </div>
+        <form id="formulario" action="procesar_formulario.php" method="post">
+            <label for="nombre">Ingresa tu Nombre:</label>
+            <input type="text" id="Nombre" required minlength="3" name="Nombre" placeholder="Ingresa tu Nombre">
+
+            <label for="email">Ingresa tu email:</label>
+            <input type="email" id="Correo" required name="email" placeholder="Ingresa tu email">
+
+            <label for="numero">Ingresa tu número telefónico:</label>
+            <input type="number" id="Telefono" required minlength="10" maxlength="10" name="Telefono" placeholder="Ingresa tu número telefónico" pattern="[0-9]{10}">
+
+            <label for="terminos">
+              <input type="checkbox" id="terminos" required>
+              Acepto los <a href="Terminos_Condiciones.html"target="_blank">términos y condiciones</a>
+            </label>
+
+            <input type="submit" value="Enviar">
+        </form>
+
+        <div id="notificacion" class="oculto">
+            <div class="cerrar">&times;</div>
+            ¡Gracias por enviar el formulario!
+        </div>
+
+        <script>
+           const formulario = document.getElementById('formulario');
+           const notificacion = document.getElementById('notificacion');
+           const cerrar = document.querySelector('.cerrar');
+
+            formulario.addEventListener('submit', (e) => {
+                e.preventDefault();
+                notificacion.classList.remove('oculto');
+            });
+
+            cerrar.addEventListener('click', () => {
+                notificacion.classList.add('oculto');
+            });
+        </script>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 NutrInnovation. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
